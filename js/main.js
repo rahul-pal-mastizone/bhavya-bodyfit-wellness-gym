@@ -205,3 +205,20 @@
         }), n.stellar()
     })
 }(jQuery);
+
+
+
+  function upiPayment799(){
+    let upiLink = "upi://pay?pa=9144376375-3@ybl&pn=Dinesh_Baghel_Bhavya_Fitness_Gym&am=799&cu=INR";
+    window.location.href = upiLink;
+    }
+
+  function upiPayment2199(){
+    let upiLink = "upi://pay?pa=9144376375-3@ybl&pn=Dinesh_Baghel_Bhavya_Fitness_Gym&am=2199&cu=INR";
+    window.location.href = upiLink;
+    }
+
+  function upiPayment3599(){
+    let upiLink = "upi://pay?pa=9144376375-3@ybl&pn=Dinesh_Baghel_Bhavya_Fitness_Gym&am=3599&cu=INR";
+    window.location.href = upiLink;
+    }
