@@ -718,7 +718,12 @@
                                     <li>1 Free personal training</li>
                                 </ul>
                                 <div class="text-center">
-                                    <a href="#!" class="btn btn-fill" onclick="upiPayment799()">Buy Now</a>
+                                    <!-- <a href="#!" class="btn btn-fill" onclick="upiPayment799()">Buy Now</a> -->
+                                        <!-- STANDARD -->
+                                        <a class="btn btn-fill"
+                                        href="upi://pay?pa=9144376375-3@ybl&amp;pn=Bhavya%20Bodyfit%20Wellness%20Gym%20by%20Dinesh%20Baghel&amp;am=799&amp;cu=INR&amp;tn=Gym%20membership%20%E2%80%93%20Standard"
+                                        onclick="return upiClick(event, 799, 'Standard')"
+                                        aria-label="Buy Standard plan with UPI">Buy Now</a>
                                 </div>
                             </div>
                         </div>
@@ -740,7 +745,12 @@
                                     <li>2 Free personal training</li>
                                 </ul>
                                 <div class="text-center">
-                                    <a href="#!" class="btn btn-fill" onclick="upiPayment2199()">Buy Now</a>
+                                    <!-- <a href="#!" class="btn btn-fill" onclick="upiPayment2199()">Buy Now</a> -->
+                                <!-- PREMIUM -->
+                                    <a class="btn btn-fill"
+                                    href="upi://pay?pa=9144376375-3@ybl&amp;pn=Bhavya%20Bodyfit%20Wellness%20Gym%20by%20Dinesh%20Baghel&amp;am=2199&amp;cu=INR&amp;tn=Gym%20membership%20%E2%80%93%20Premium"
+                                    onclick="return upiClick(event, 2199, 'Premium')"
+                                    aria-label="Buy Premium plan with UPI">Buy Now</a>
                                 </div>
                             </div>
                         </div>
@@ -761,7 +771,12 @@
                                     <li>5 Free personal training</li>
                                 </ul>
                                 <div class="text-center">
-                                    <a href="#!" class="btn btn-fill" onclick="upiPayment3599()">Buy Now</a>
+                                    <!-- <a href="#!" class="btn btn-fill" onclick="upiPayment3599()">Buy Now</a> -->
+                                <!-- PLATINUM -->
+                                    <a class="btn btn-fill"
+                                    href="upi://pay?pa=9144376375-3@ybl&amp;pn=Bhavya%20Bodyfit%20Wellness%20Gym%20by%20Dinesh%20Baghel&amp;am=3599&amp;cu=INR&amp;tn=Gym%20membership%20%E2%80%93%20Platinum"
+                                    onclick="return upiClick(event, 3599, 'Platinum')"
+                                    aria-label="Buy Platinum plan with UPI">Buy Now</a>
                                 </div>
                             </div>
                         </div>
@@ -1186,13 +1201,34 @@
     <!-- custom scripts -->
     <script src="js/main.js"></script>
 
+    <!-- online upi payments -->
+    <script src="js/payments.js"></script>
+
     <!-- form plugins js -->
-    <script src="quform/js/plugins.js"></script>
+    <!-- <script src="quform/js/plugins.js"></script> -->
 
     <!-- form scripts js -->
-    <script src="quform/js/scripts.js"></script>
+    <!-- <script src="quform/js/scripts.js"></script> -->
 
     <!-- all js include end -->
+
+    <div id="upi-modal" aria-hidden="true" role="dialog" aria-labelledby="upi-title"
+        style="position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:9999;">
+    <div style="background:#fff;padding:18px 20px;border-radius:12px;max-width:360px;width:92%;text-align:center;position:relative;box-shadow:0 10px 30px rgba(0,0,0,.25);">
+        <button type="button" aria-label="Close" onclick="closeUpiModal()"
+                style="position:absolute;right:10px;top:10px;border:none;background:transparent;font-size:22px;cursor:pointer">×</button>
+        <h4 id="upi-title" style="margin:0 0 6px;">Scan to pay</h4>
+        <p id="upi-plan" style="margin:0 0 12px;font-size:14px;opacity:.8;"></p>
+        <img id="upi-qr" alt="UPI QR code" width="220" height="220" style="display:block;margin:0 auto 10px;">
+        <input id="upi-link" type="text" readonly
+            style="width:100%;font-size:12px;padding:8px 10px;background:#f5f5f7;border:1px solid #e5e7eb;border-radius:8px;margin-bottom:10px;">
+        <div style="display:flex;gap:8px;justify-content:center;">
+        <button type="button" class="btn btn-fill" onclick="openUpiApp()">Open UPI app</button>
+        <button type="button" class="btn btn-outline" onclick="copyUpiLink()">Copy link</button>
+        </div>
+    </div>
+    </div>
+
 </body>
 
 </html>
